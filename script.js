@@ -1,95 +1,62 @@
 /**
- * NO PORTUGUESE - Premium Interaction Script
- * Funções: Smooth Scroll, CountUp, Floating WhatsApp e Dynamic Navbar
+ * NO PORTUGUESE - Core Interactions (Parte 1)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Efeito de Navbar ao Rolar
+    // 1. Efeito da Navbar ao Rolar
+    // Quando o utilizador desce 50px, a navbar ganha um fundo sólido e reduz o tamanho
     const nav = document.querySelector('nav');
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            nav.classList.add('py-3', 'shadow-2xl');
-            nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            nav.style.paddingTop = '15px';
+            nav.style.paddingBottom = '15px';
+            nav.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+            nav.classList.add('shadow-xl');
         } else {
-            nav.classList.remove('py-3', 'shadow-2xl');
-            nav.style.background = 'rgba(255, 255, 255, 0.03)';
+            nav.style.paddingTop = '24px';
+            nav.style.paddingBottom = '24px';
+            nav.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            nav.classList.remove('shadow-xl');
         }
     });
 
-    // 2. Contador de Aulas (Efeito CountUp)
-    const observeNumbers = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const endValue = parseInt(target.innerText);
-                let startValue = 0;
-                let duration = 2000; // 2 segundos
-                let step = endValue / (duration / 10);
-                
-                const timer = setInterval(() => {
-                    startValue += step;
-                    if (startValue >= endValue) {
-                        target.innerText = endValue;
-                        clearInterval(timer);
-                    } else {
-                        target.innerText = Math.floor(startValue);
-                    }
-                }, 10);
-                observeNumbers.unobserve(target);
-            }
-        });
-    }, { threshold: 1 });
-
-    // Aplicar o observador nos números de impacto (70 aulas / 0% português)
-    document.querySelectorAll('.font-900').forEach(num => {
-        if (!num.innerText.includes('%')) observeNumbers.observe(num);
-    });
-
-    // 3. Redirecionamento Inteligente para WhatsApp
-    const buttons = document.querySelectorAll('a[href="#"], button');
+    // 2. Revelação Suave dos Elementos (Fade-In)
+    // Criamos uma pequena animação de entrada para o título e subtítulo
+    const heroElements = document.querySelectorAll('section > div > *');
     
-    buttons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const isSelectBtn = btn.innerText.toLowerCase().includes('selecionar') || 
-                               btn.innerText.toLowerCase().includes('matrícula') ||
-                               btn.innerText.toLowerCase().includes('começar');
-
-            if (isSelectBtn) {
-                e.preventDefault();
-                
-                // Identifica qual plano o usuário clicou para mandar a mensagem certa
-                let plano = "Interesse Geral";
-                const card = btn.closest('.card-vip');
-                if (card) {
-                    plano = card.querySelector('h4').innerText;
-                }
-
-                const mensagem = encodeURIComponent(`Olá! Gostaria de saber mais sobre o método No Portuguese e o plano ${plano}. Pode me ajudar?`);
-                const fone = "5522981259080";
-                
-                window.open(`https://wa.me/${fone}?text=${mensagem}`, '_blank');
-            }
-        });
+    heroElements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `all 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
+        
+        // Pequeno delay para começar a animação
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 100);
     });
 
-    // 4. Efeito de Digitação no Subtítulo (Opcional - dá um charme "tech")
-    const heroText = document.querySelector('.hero-subtitle'); // Adicione esta classe no seu P do hero se quiser
-    if(heroText) {
-        const content = heroText.innerHTML;
-        heroText.innerHTML = '';
-        let i = 0;
-        function typeWriter() {
-            if (i < content.length) {
-                heroText.innerHTML += content.charAt(i);
-                i++;
-                setTimeout(typeWriter, 30);
-            }
-        }
-        typeWriter();
+    // 3. Efeito de Interação no Botão Principal
+    const mainBtn = document.querySelector('.bg-white');
+    if (mainBtn) {
+        mainBtn.addEventListener('mouseenter', () => {
+            console.log("User demonstrando interesse no início da jornada.");
+        });
     }
 
-    // 5. Log de boas-vindas para curiosos (DevTools)
-    console.log("%cNO PORTUGUESE IDIOMAS", "color: #bf953f; font-size: 30px; font-weight: bold;");
-    console.log("Bem-vindo ao futuro do bilinguismo. Método fundado por Paulini Medeiros.");
+    // 4. Smooth Scroll para links internos (quando adicionarmos as outras partes)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
 });
