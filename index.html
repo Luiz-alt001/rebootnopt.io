@@ -9,53 +9,52 @@
 </head>
 <body class="bg-black text-white">
 
-    <nav class="fixed w-full z-50 py-6 px-8 md:px-16 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
+    <nav class="fixed w-full z-50 py-6 px-8 md:px-16 flex justify-between items-center transition-all duration-500">
         <div class="logo font-black text-2xl tracking-tighter uppercase">
-            NO <span class="font-thin tracking-widest">PORTUGUESE</span>
+            NO <span class="text-yellow-400">PORTUGUESE</span>
         </div>
-        <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[4px] opacity-70">
-            <a href="#" class="hover:opacity-100 transition">Método</a>
-            <a href="#" class="hover:opacity-100 transition">A Teacher</a>
-            <a href="#" class="hover:opacity-100 transition">Planos</a>
+        
+        <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[4px]">
+            <a href="#" class="hover:text-yellow-400 transition">Método</a>
+            <a href="#" class="hover:text-yellow-400 transition">A Teacher</a>
+            <a href="#" class="hover:text-yellow-400 transition">Planos</a>
         </div>
-        <div class="flex items-center gap-4">
-            <span class="text-[9px] uppercase font-bold tracking-widest hidden sm:block opacity-40 italic">Campos/RJ</span>
-            <a href="#" class="border border-white/20 px-5 py-2 text-[10px] font-bold uppercase hover:bg-white hover:text-black transition">Matrículas</a>
-        </div>
+
+        <a href="#" class="bg-yellow-400 text-black px-6 py-2 text-[10px] font-black uppercase hover:bg-white transition">
+            Matrículas
+        </a>
     </nav>
 
     <section class="h-screen relative flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-zinc-900/20 to-black z-0"></div>
-        
         <div class="relative z-10 text-center px-6">
-            <span class="block text-xs md:text-sm font-bold tracking-[8px] uppercase mb-6 opacity-60" data-aos="fade-down">
-                Fundada em 2018 por Paulini Medeiros
+            <span class="block text-xs font-black tracking-[10px] uppercase mb-6 text-yellow-400/80">
+                Since 2018 / Paulini Medeiros
             </span>
             
-            <h1 class="text-6xl md:text-[140px] font-black leading-none uppercase tracking-tighter mb-8 italic">
-                SAY <span class="outline-text font-black not-italic">NO</span> <br>PORTUGUESE.
+            <h1 class="text-6xl md:text-[130px] font-black leading-none uppercase tracking-tighter mb-8 italic">
+                SAY <span class="outline-yellow font-black not-italic">NO</span> <br>PORTUGUESE.
             </h1>
             
-            <p class="text-lg md:text-2xl font-light text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-                Domine o bilinguismo em <span class="text-white font-bold italic">70 aulas</span> através da imersão total. <br>
-                Onde o medo de errar não existe.
+            <p class="text-lg md:text-2xl font-medium text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+                A imersão que proíbe o português para libertar a sua fala. <br>
+                Domine o bilinguismo em <span class="text-yellow-400 font-black italic">70 aulas</span>.
             </p>
             
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#" class="bg-white text-black px-12 py-5 font-black uppercase text-xs tracking-widest hover:invert transition duration-500">
+                <a href="#" class="bg-yellow-400 text-black px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-white transition duration-300 shadow-[0_0_30px_rgba(250,204,21,0.3)]">
                     Iniciar Jornada
                 </a>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-[1px] bg-white/30"></div>
-                    <span class="text-[10px] uppercase font-bold tracking-widest opacity-50 italic">7 dias de garantia</span>
-                </div>
+                <span class="text-[10px] uppercase font-bold tracking-widest opacity-40 italic border-l border-white/20 pl-6">
+                    Zero português desde o nível 0
+                </span>
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20 animate-bounce">
-            <div class="w-[1px] h-12 bg-white mx-auto"></div>
+        <div class="absolute left-10 bottom-10 hidden lg:block">
+            <p class="rotate-90 origin-left text-[10px] font-black tracking-[10px] uppercase opacity-20">Campos dos Goytacazes - RJ</p>
         </div>
     </section>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
