@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Portuguese | Be Real</title>
+    <title>No Portuguese | Be Real - Paulini Medeiros</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white overflow-x-hidden">
 
     <nav class="fixed w-full z-50 py-6 px-8 md:px-16 flex justify-between items-center transition-all duration-500">
         <div class="logo font-black text-2xl tracking-tighter uppercase">
@@ -15,18 +18,19 @@
         </div>
         
         <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[4px]">
-            <a href="#" class="hover:text-yellow-400 transition">Método</a>
-            <a href="#" class="hover:text-yellow-400 transition">A Teacher</a>
-            <a href="#" class="hover:text-yellow-400 transition">Planos</a>
+            <a href="#metodo" class="hover:text-yellow-400 transition">O Método</a>
+            <a href="#historia" class="hover:text-yellow-400 transition">A Teacher</a>
+            <a href="#planos" class="hover:text-yellow-400 transition">Planos</a>
+            <a href="#contato" class="hover:text-yellow-400 transition">SAC</a>
         </div>
 
-        <a href="#" class="bg-yellow-400 text-black px-6 py-2 text-[10px] font-black uppercase hover:bg-white transition">
+        <a href="https://wa.me/5522981259080" class="bg-yellow-400 text-black px-6 py-2 text-[10px] font-black uppercase hover:bg-white transition shadow-[0_0_15px_rgba(250,204,21,0.4)]">
             Matrículas
         </a>
     </nav>
 
-    <section class="h-screen relative flex items-center justify-center overflow-hidden">
-        <div class="relative z-10 text-center px-6">
+    <section class="h-screen relative flex items-center justify-center overflow-hidden border-b border-white/5">
+        <div class="relative z-10 text-center px-6" data-aos="zoom-in">
             <span class="block text-xs font-black tracking-[10px] uppercase mb-6 text-yellow-400/80">
                 Since 2018 / Paulini Medeiros
             </span>
@@ -41,7 +45,7 @@
             </p>
             
             <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
-                <a href="#" class="bg-yellow-400 text-black px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-white transition duration-300 shadow-[0_0_30px_rgba(250,204,21,0.3)]">
+                <a href="#planos" class="bg-yellow-400 text-black px-12 py-5 font-black uppercase text-xs tracking-widest hover:bg-white transition duration-300 shadow-[0_0_30px_rgba(250,204,21,0.3)]">
                     Iniciar Jornada
                 </a>
                 <span class="text-[10px] uppercase font-bold tracking-widest opacity-40 italic border-l border-white/20 pl-6">
@@ -49,12 +53,122 @@
                 </span>
             </div>
         </div>
+    </section>
 
-        <div class="absolute left-10 bottom-10 hidden lg:block">
-            <p class="rotate-90 origin-left text-[10px] font-black tracking-[10px] uppercase opacity-20">Campos dos Goytacazes - RJ</p>
+    <section id="metodo" class="py-32 px-8 md:px-20 bg-zinc-950">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-8" data-aos="fade-right">
+                <div class="inline-block bg-yellow-400 text-black px-4 py-1 font-black text-[10px] uppercase tracking-widest">
+                    O Fim da Tradução Mental
+                </div>
+                <h2 class="text-5xl md:text-7xl font-black uppercase italic leading-none">
+                    MÉTODO <br><span class="text-yellow-400">NP.</span>
+                </h2>
+                <p class="text-xl text-zinc-400 leading-relaxed">
+                    Esqueça as tabelas de verbos. No Método No Portuguese, você aprende através da <span class="text-white font-bold italic border-b border-yellow-400">Assimilação Natural</span>.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+                    <div class="border-l-2 border-yellow-400 pl-6">
+                        <h4 class="text-xl font-black uppercase italic">Imersão Total</h4>
+                        <p class="text-xs text-zinc-500 mt-2 uppercase">Proibido o uso da língua materna em aula para forçar a fluência.</p>
+                    </div>
+                    <div class="border-l-2 border-yellow-400 pl-6">
+                        <h4 class="text-xl font-black uppercase italic">Foco em Fala</h4>
+                        <p class="text-xs text-zinc-500 mt-2 uppercase">70 aulas focadas em autoconfiança e vivência real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group" data-aos="fade-left">
+                <div class="absolute -inset-4 border border-yellow-400/20 translate-x-4 translate-y-4"></div>
+                <div class="relative bg-zinc-900 aspect-square overflow-hidden border border-white/10">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071" class="w-full h-full object-cover grayscale opacity-50" alt="Aula NP">
+                    <div class="absolute bottom-6 left-6 bg-yellow-400 text-black p-6 font-black italic">
+                        <p class="text-4xl leading-none">7</p>
+                        <p class="text-[10px] uppercase tracking-tighter">Dias de Garantia</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <section id="historia" class="py-32 px-8 md:px-20 bg-white text-black">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1" data-aos="fade-right">
+                <span class="font-black uppercase text-xs tracking-[5px] text-zinc-400">The Teacher</span>
+                <h2 class="text-5xl md:text-7xl font-black uppercase italic my-6 leading-none">Paulini <br>Medeiros.</h2>
+                <div class="space-y-6 text-zinc-700 text-lg leading-relaxed">
+                    <p>Natural de Grussaí, inspirada por <i>High School Musical</i>. Começou como teacher aos 17 anos e em 2018 criou a <b>No Portuguese</b> para humanizar o bilinguismo.</p>
+                    <p>Um ambiente <b>Anti-Racista e LGBTQIA+ Friendly</b> focado na autoconfiança.</p>
+                </div>
+                <div class="flex gap-4 mt-10 font-black text-[10px] uppercase italic">
+                    <span class="bg-black text-white px-3 py-1">#Libriana</span>
+                    <span class="bg-black text-white px-3 py-1">#TapiocaDeChocolate</span>
+                </div>
+            </div>
+            <div class="order-1 md:order-2" data-aos="zoom-in">
+                <div class="bg-black aspect-square rounded-[60px] overflow-hidden rotate-3 hover:rotate-0 transition duration-500 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976" class="w-full h-full object-cover grayscale" alt="Paulini">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-32 px-8 md:px-20 bg-black">
+        <div class="max-w-7xl mx-auto text-center mb-20">
+            <h2 class="text-4xl md:text-7xl font-black uppercase italic italic">Linha <span class="text-yellow-400">Exclusive.</span></h2>
+        </div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+            <div class="border border-white/10 p-8 flex flex-col hover:border-yellow-400 transition" data-aos="fade-up">
+                <h4 class="text-lg font-black uppercase mb-10">Classic ON</h4>
+                <p class="text-xs text-zinc-500 mb-10 flex-grow">AULAS EM GRUPO COM FOCO EM IMERSÃO REMOTA.</p>
+                <a href="https://wa.me/5522981259080" class="text-center border border-white py-3 text-[10px] font-black uppercase hover:bg-white hover:text-black">Consultar</a>
+            </div>
+            <div class="bg-yellow-400 text-black p-8 flex flex-col scale-105 shadow-[0_0_50px_rgba(250,204,21,0.2)] z-10" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-lg font-black uppercase mb-2 italic">VIP Diamond</h4>
+                <span class="text-4xl font-black block mb-6 italic">12h <small class="text-xs">VIP</small></span>
+                <ul class="text-[10px] font-black uppercase space-y-2 mb-10 flex-grow">
+                    <li>• Coaching com Paulini</li>
+                    <li>• Agenda Prioritária</li>
+                </ul>
+                <a href="https://wa.me/5522981259080" class="text-center bg-black text-white py-4 text-[10px] font-black uppercase">Vaga Exclusiva</a>
+            </div>
+            <div class="border border-white/10 p-8 flex flex-col hover:border-yellow-400 transition" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-lg font-black uppercase mb-2">VIP Gold</h4>
+                <span class="text-3xl font-black block mb-6 italic">8h <small class="text-xs">VIP</small></span>
+                <a href="https://wa.me/5522981259080" class="text-center bg-white text-black py-3 text-[10px] font-black uppercase">Selecionar</a>
+            </div>
+            <div class="border border-white/10 p-8 flex flex-col hover:border-yellow-400 transition" data-aos="fade-up" data-aos-delay="300">
+                <h4 class="text-lg font-black uppercase mb-2">VIP Silver</h4>
+                <span class="text-3xl font-black block mb-6 italic">4h <small class="text-xs">VIP</small></span>
+                <a href="https://wa.me/5522981259080" class="text-center bg-white text-black py-3 text-[10px] font-black uppercase">Selecionar</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="py-20 px-8 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
+            <div class="font-black text-2xl">NO <span class="text-yellow-400">PORTUGUESE</span></div>
+            <div>
+                <h5 class="text-xs font-black uppercase tracking-widest text-yellow-400 mb-6 italic">Contatos Oficiais</h5>
+                <ul class="text-sm text-zinc-500 space-y-2">
+                    <li><b>Matrículas:</b> (22) 9 8125-9080</li>
+                    <li><b>SAC Método:</b> (22) 99740-59397</li>
+                    <li><b>E-mail:</b> noportugueseidiomas@gmail.com</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xs font-black uppercase tracking-widest text-yellow-400 mb-6 italic">Sede</h5>
+                <p class="text-sm text-zinc-500 italic">Rua Silvio Pinto, 227 - Turf</p>
+                <p class="text-sm text-zinc-500 italic">Campos/RJ - Arquipélago Coworking</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
