@@ -5,6 +5,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #000;
     scroll-behavior: smooth;
+    color: #fff;
 }
 
 /* Amarelo Vibrante No Portuguese */
@@ -18,30 +19,80 @@ body {
     -webkit-text-stroke: 1.5px #facc15;
 }
 
-/* Navbar Custom */
+/* Navbar Customizada ao Rolar */
 nav.scrolled {
     background-color: rgba(0, 0, 0, 0.95);
     padding: 15px 40px;
     border-bottom: 1px solid rgba(250, 204, 21, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-/* Links */
+/* Animação Marquee (Texto Infinito) */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+}
+
+/* Efeito de Vidro Sutil (Glassmorphism) para Cards */
+.bg-zinc-950 {
+    background-color: #09090b;
+}
+
+/* Ajustes de Imagens e Filtros */
+.grayscale {
+    filter: grayscale(100%);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .grayscale {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Seleção de Texto */
+::selection {
+    background: #facc15;
+    color: #000;
+}
+
+/* Estilização de Links e Botões */
 a {
     transition: all 0.3s ease-in-out;
 }
 
-/* Imagens */
-.grayscale {
-    filter: grayscale(100%);
-    transition: all 0.6s ease;
+.hover\:invert:hover {
+    filter: invert(1);
 }
 
-.grayscale:hover {
-    filter: grayscale(0%);
+/* Scrollbar Customizada (Dark Mode) */
+::-webkit-scrollbar {
+    width: 6px;
 }
 
-/* Botão de Matrícula Flutuante */
-::selection {
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
     background: #facc15;
-    color: #000;
+    border-radius: 10px;
+}
+
+/* Responsividade de Tipografia Especial */
+@media (max-width: 768px) {
+    .animate-marquee {
+        animation-duration: 15s;
+    }
+}
+
+/* Efeito nos Cards de Planos */
+#planos .border-white\/10:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    transform: translateY(-5px);
+    border-color: rgba(250, 204, 21, 0.5);
 }
