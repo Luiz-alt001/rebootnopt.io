@@ -1,35 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Inicializar AOS (Animações de Scroll)
-    // Responsável por fazer os elementos surgirem suavemente ao descer a página
+    // Faz os elementos surgirem com fade e movimento ao descer a página
     AOS.init({ 
         duration: 1000, 
         once: true,
         offset: 100,
-        disable: 'mobile' // Opcional: desativa em celulares muito antigos para performance
+        disable: window.innerWidth < 768 // Desativa em telas pequenas para melhor performance
     });
 
     // 2. Comportamento da Navbar ao rolar
-    // Adiciona o fundo preto e blur quando o usuário sai do topo
+    // Adiciona fundo preto, blur e borda quando o usuário sai do topo
     const nav = document.querySelector('nav');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 80) {
+        if (window.scrollY > 50) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
         }
     });
 
-    // 3. Smooth Scroll (Rolagem Suave)
-    // Faz a transição suave entre as seções (Método, História, Planos)
+    // 3. Smooth Scroll (Rolagem Suave) com compensação de Navbar
+    // Garante que ao clicar no menu, a seção não fique "escondida" atrás da nav fixa
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            
+            // Verifica se o link é apenas "#" ou se o alvo existe
+            if (targetId === '#') return;
+            
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                // Compensação da altura da navbar fixa
+                e.preventDefault();
                 const navHeight = nav.offsetHeight;
                 const elementPosition = targetElement.offsetTop;
                 const offsetPosition = elementPosition - navHeight;
@@ -42,13 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Efeito de Hover Dinâmico nos Planos
-    // Dá um feedback visual no console (útil para trackear interesse futuramente)
-    const cards = document.querySelectorAll('#planos > div > div');
-    cards.forEach(card => {
+    // 4. Efeito de Hover Dinâmico nos Planos (Console Tracking)
+    // Monitora qual plano o usuário está explorando
+    const planCards = document.querySelectorAll('#planos .max-w-7xl > div');
+    planCards.forEach(card => {
         card.addEventListener('mouseenter', () => {
-            const plano = card.querySelector('h4').innerText;
-            console.log(`%c[Interesse]: Visualizando plano ${plano}`, "color: #facc15");
+            const planoTitle = card.querySelector('h4');
+            if (planoTitle) {
+                const nomePlano = planoTitle.innerText;
+                console.log(`%c[Interesse]: Visualizando ${nomePlano}`, "color: #facc15; font-weight: bold;");
+            }
         });
     });
 
