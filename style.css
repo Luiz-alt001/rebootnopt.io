@@ -7,12 +7,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #000;
-    scroll-behavior: smooth;
     color: #fff;
     overflow-x: hidden;
+    line-height: 1.5;
 }
 
 /* --- Cores e Identidade --- */
@@ -31,11 +35,17 @@ body {
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
 }
 
+.outline-black {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #000;
+}
+
 /* --- Navbar Dinâmica --- */
 nav {
     transition: all 0.4s ease-in-out;
 }
 
+/* Classe aplicada via JS ao rolar a página */
 nav.scrolled {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 15px 40px;
@@ -73,7 +83,7 @@ nav.scrolled {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hover em containers com a classe group (Tailwind) */
+/* Efeito Hover nas Imagens */
 .group:hover .grayscale,
 img:hover.grayscale {
     filter: grayscale(0%);
@@ -110,7 +120,7 @@ img:hover.grayscale {
     border-color: rgba(250, 204, 21, 0.4);
 }
 
-/* Efeito para o plano em destaque */
+/* Destaque do Plano VIP */
 .scale-105 {
     transform: scale(1.05);
 }
@@ -129,6 +139,10 @@ img:hover.grayscale {
         transform: scale(1);
         margin: 10px 0;
     }
+    
+    nav {
+        padding: 20px !important;
+    }
 }
 
 /* Utilitários Extras */
@@ -138,4 +152,13 @@ img:hover.grayscale {
 
 .transition-slow {
     transition: all 1s ease;
+}
+
+/* Ajuste para o efeito de rotação na foto da Teacher */
+.rotate-3 {
+    transform: rotate(3deg);
+}
+
+.hover\:rotate-0:hover {
+    transform: rotate(0deg);
 }

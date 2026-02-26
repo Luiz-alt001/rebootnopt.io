@@ -1,3 +1,9 @@
+/**
+ * NO PORTUGUESE - Script Principal
+ * Desenvolvido para: Paulini Medeiros
+ * Funcionalidades: AOS, Navbar Dinâmica, Smooth Scroll e Tracking
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Inicializar AOS (Animações de Scroll)
